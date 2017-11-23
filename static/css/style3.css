@@ -1,0 +1,39 @@
+body {
+	
+	
+	background-color: white;
+	}
+	
+
+h1{
+	font-size:60px;
+	color:white;
+	background-color:#210B61  ;
+	text-align: center;
+	
+}
+
+
+ .sub1 {
+	height: 80px; 
+	width: 200px;
+	font-size:25px;
+	color:white;
+	background-color:#210B61  ;
+	text-align: center;
+	position:absolute;
+		top: 720px;
+		left: 720px;
+}
+
+.sub2 {
+	height: 80px; 
+	width: 200px;
+	font-size:25px;
+	color:white;
+	background-color:#210B61  ;
+	text-align: center;
+	position:absolute;
+		top: 720px;
+		left: 1000px;
+}

@@ -1,0 +1,10 @@
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+
+<div class="row">
+
+    <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+    </div> 
+
+</div>

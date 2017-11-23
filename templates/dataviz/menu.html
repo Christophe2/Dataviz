@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Data Analyzer{% endblock %}
+{% block navbar_contact %}active{% endblock %}
+{% block head %}
+{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% endblock %}
+{% block content %}
+<br />
+	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Data Analyzer <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
+
+
+
+	<h2><b> Step 1: </b></h2>
+	<h3><b> Step 2: </b></h3>
+	<h4> Select Data Type </h4>
+	<h5> Select File(s) </h5>
+
+
+
+	<form method="post" action="{% url "analysis"  %}" enctype="multipart/form-data">
+    {% csrf_token %}
+		<p>
+
+
+       <select class="list" name="datatype" id="datatype" >
+           <option value="timeserie" selected>Time Serie</option>
+           <option value="log">Log</option>
+       </select>
+
+
+		<input type="file" class="champs1" name="nom1" id="nom1" required />
+
+		<input type="file" class="champs2" name="nom2" id="nom2"/>
+
+		<input type="image" class="fle" src="{% static "img/image1.png" %}" alt="Fleche"  />
+
+
+		</p>
+	</form>
+{% endblock %}

@@ -1,0 +1,109 @@
+body {
+	
+	background: url("Image3.png") fixed no-repeat 300px 300px, url("Image2.png") fixed no-repeat 850px 310px  ;
+
+	background-color: white;
+	
+	}
+	
+
+h1{
+	font-size:60px;
+	color:white;
+	background-color:#210B61  ;
+	text-align: center;
+	
+}
+
+h2{
+	font-size:35px;
+	color:#210B61;
+	position:absolute;
+		top: 280px;
+		left: 420px;
+
+	
+}
+
+h3{
+	font-size:35px;
+	color:#210B61;
+	position:absolute;
+		top: 280px;
+		left: 970px;
+
+	
+}
+
+h4{
+	font-size:23px;
+	color:black;
+	position:absolute;
+		top: 325px;
+		left: 420px;
+
+	
+}
+
+h5{
+	font-size:23px;
+	color:black;
+	position:absolute;
+		top: 325px;
+		left: 970px;
+
+	
+}
+
+
+.champs1 {
+	height: 50px; 
+	width: 500px; 
+	border: 500; 
+	border-color: #210B61; 
+	background: white;
+	font-size: 25px; 
+	color:#210B61; 
+	
+	position:absolute;
+		top: 450px;
+		left: 860px;
+}
+
+.champs2 {
+	height: 50px; 
+	width: 500px; 
+	border: 10px; 
+	border-color: #210B61; 
+	background: white;
+	font-size: 25px; 
+	color:#210B61; 
+	
+	position:absolute;
+		top: 550px;
+		left: 860px;
+}
+
+.list {
+	height: 50px; 
+	width: 200px; 
+	border: 200px; 
+	border-color: #210B61; 
+	background: white; 
+	font-size: 25px; 
+	color:#210B61; 
+	
+	position:absolute;
+		top: 450px;
+		left: 390px;
+}
+.fle {
+	height: 150px; 
+	width: 150px;
+	position:absolute;
+		top: 765px;
+		left: 1620px;
+}
+
+
+
