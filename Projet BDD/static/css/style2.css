@@ -1,6 +1,6 @@
 body {
-	
-	background: url("Image4.png") fixed no-repeat 590px 300px ;
+
+	background: url(Image4.png) fixed no-repeat 590px 300px ;
 
 	background-color: white;
 	
@@ -20,7 +20,7 @@ h2{
 	color:#210B61;
 	position:absolute;
 		top: 280px;
-		left: 710px;
+		left: 1030px;
 
 	
 }
@@ -30,8 +30,8 @@ h4{
 	font-size:23px;
 	color:black;
 	position:absolute;
-		top: 325px;
-		left: 710px;
+		top: 365px;
+		left: 935px;
 
 	
 }
@@ -46,8 +46,8 @@ h4{
 	color:#210B61; 
 	
 	position:absolute;
-		top: 450px;
-		left: 620px;
+		top: 560px;
+		left: 910px;
 }
  .sub {
 	height: 80px; 

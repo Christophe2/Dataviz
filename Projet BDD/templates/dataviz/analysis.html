@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Data Analyzer{% endblock %}
+{% block navbar_analysis %}active{% endblock %}
+{% block head %}
+    <link href="{% static "bootstrap/dist/css/bootstrap.css/bootstrap.min.css" %}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{% static "css/style2.css" %}">
+{% endblock %}
+{% block content %}
+<br />
+	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Type of Analysis <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
+
+
+	<h2><b> </br> Step 3: </b></h2>
+
+	<h4> </br></br></br> Select an Analysis </h4>
+
+
+
+     </br> </br>
+	<form method="post" action="{% url "graph" %}" enctype="multipart/form-data">
+    {% csrf_token %}
+		<p>
+
+       <select class="list" name="analysistype" id="analysistype" required >
+           <option value="forecast" selected >Forecast</option>
+           <option value="ascending">Ascending</option>
+       </select>
+
+		<input type="image" class="fle" src ="{% static "img/image1.png" %}" alt="Fleche"  />
+
+
+		</p>
+	</form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <img src="{% static "img/Image4.png" %}" alt="Logo">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% comment %}<html>
+	<head>
+	<title> Data Analyzer </title>
+	<link rel="stylesheet" type="text/css" href="style2.css" />
+
+	</head>
+
+
+
+	<body>
+
+	<br />
+	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Data Analyzer <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
+
+
+
+	<h2><b> Step 3: </b></h2>
+	<h4> Select an Analysis </h4>
+
+
+
+
+	<form method="post" action="{% url "graph" %}" enctype="multipart/form-data">
+    {% csrf_token %}
+		<p>
+
+
+       <select class="list" name="analysistype" id="analysistype" required >
+           <option value="forecast" selected >Forecast</option>
+           <option value="ascending">Ascending</option>
+       </select>
+
+		<input type="image" class="fle" src ="image1.png" alt="Fleche"  />
+
+
+		</p>
+	</form>
+
+	</body>
+
+</html>{% endcomment %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Data Analyzer{% endblock %}
+{% block navbar_menu %}active{% endblock %}
+{% block head %}
+{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% endblock %}
+{% block content %}
+
+	<head>
+	<title> Data Analyzer </title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+	<link href="{% static "bootstrap/dist/css/bootstrap.css/bootstrap.min.css" %}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+
+    <h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" />  Data Selection <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
+
+
+
+	<h2><b> Step 1: </b></h2>
+	<h3><b> Step 2: </b></h3>
+	<h4> Select Data Type </h4>
+	<h5> Select File(s) </h5>
+
+
+
+	<form method="post" action="{% url "analysis"  %}" enctype="multipart/form-data">
+    {% csrf_token %}
+		<p>
+
+
+       <select class="list" name="datatype" id="datatype">
+           <option value="timeserie" selected>Time Serie</option>
+           <option value="log">Log</option>
+       </select>
+
+
+		<input type="file" class="champs1" name="nom1" id="nom1" required />
+
+		<input type="file" class="champs2" name="nom2" id="nom2"/>
+
+		<input type="image" class="fle" src="{% static "img/image1.png" %}" alt="Fleche"  />
+
+
+		</p>
+	</form>
+    </br></br></br></br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <img src="{% static "img/Image3.png" %}" alt="Logo">
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-1">
+                <img src="{% static "img/Image2.png" %}" alt="Logo">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% comment %}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Data Analyzer{% endblock %}
+{% block navbar_menu %}active{% endblock %}
+{% block head %}
+{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% endblock %}
+{% block content %}
+<br />
+	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Data Selection <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
+
+
+
+	<h2><b> Step 1: </b></h2>
+	<h3><b> Step 2: </b></h3>
+	<h4> Select Data Type </h4>
+	<h5> Select File(s) </h5>
+
+
+
+	<form method="post" action="{% url "analysis"  %}" enctype="multipart/form-data">
+    {% csrf_token %}
+		<p>
+
+
+       <select class="list" name="datatype" id="datatype">
+           <option value="timeserie" selected>Time Serie</option>
+           <option value="log">Log</option>
+       </select>
+
+
+		<input type="file" class="champs1" name="nom1" id="nom1" required />
+
+		<input type="file" class="champs2" name="nom2" id="nom2"/>
+
+		<input type="image" class="fle" src="{% static "img/image1.png" %}" alt="Fleche"  />
+
+
+		</p>
+	</form>
+{% endblock %}{% endcomment %}

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}Data Analyzer{% endblock %}
-{% block navbar_contact %}active{% endblock %}
+{% block navbar_graph %}active{% endblock %}
 {% block head %}
 {{ block.super }}
 	<link rel="stylesheet" type="text/css" href="{% static "css/style3.css" %}">
@@ -17,9 +17,37 @@
 
 {% endblock %}
 {% block content %}
+<br />
+	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Data Visualization <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
 
+
+    <form method="post" action="{% url "menu" %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+        <p>
+
+		<input type="submit" class="sub2" name="submit2" Value="New analyze"  />
+
+        </p>
+    </form>
 
     <div id="container"></div>
+
+    <div class="form-group">
+        <label for="comment">Comment:</label><br />
+        <br>
+        <textarea rows="5" cols="60" id="comment"></textarea>
+        <input type="submit" class="sub1" name="submit1" Value="Submit"  />
+    </div>
+
+
+{% comment %}
+    <FORM method="post" action="cible.php">
+    <TEXTAREA name="nom" rows=4 cols=40>Commentaire à faire sur ce graphique</TEXTAREA>
+    <input type="submit" class="sub1" name="submit1" Value="Comment"  />
+    </FORM>
+{% endcomment %}
+
 
     <script>
     function getCol(matrix, col){
@@ -29,21 +57,31 @@
        }
        return column;
     }
+
+{% comment %}    function getList (nbcol){
+      var courb = [];
+      for(var i=1; i=nbcol; i++){
+          courb.push(parseInt({name:array[0][i], data:getCol(array,i)});
+      }
+      return courb;
+    }{% endcomment %}
+
+
     $.get("{% static "graph/datavirm.txt" %}", function(data) {
     array = $.csv.toArrays(data);
     Highcharts.chart('container', {
 
         title: {
-            text: 'Solar Employment Growth by Sector, 2010-2016'
+            text: 'DATA ANALYSIS'
         },
 
         subtitle: {
-            text: 'Source: thesolarfoundation.com'
+            text: 'TEST'
         },
 
         yAxis: {
             title: {
-                text: 'Number of Employees'
+                text: 'Evolution'
             }
         },
         legend: {
@@ -63,7 +101,7 @@
             }
         },
 
-        series: [{
+        series:[{
             name: array[0][1],
             data: getCol(array, 1)
         }, {
@@ -94,7 +132,37 @@
     });
     });
 
-   </script>
+
+
+{% comment %}   </script>
+
+    <script language="JavaScript" type="text/javascript">
+    var sujet='pour_test'; // les dix premiers caractères serviront d'identification de la liste des commentaires
+    var adressebase='exemple/';  // base d'adressage pour le fichier PHP de gestion des commentaires
+    </script>
+    <div id="laisseruncommentaire">
+        <form name="commentaire_bouton" id="commentaire_form_A" action="" method="" onsubmit="return false;" style="display: Block">
+            <input type="button" value="laisser un commentaire" onclick="Affiche_form_B()">
+        </form>
+        <form name="commentaire_saisie" id="commentaire_form_B" action="" method="" onsubmit="return false;" style="display: None">
+            <fieldset>
+            <legend>Vous pouvez saisir un commentaire ...</legend>
+                Votre nom (<i><small>ou pseudo</small></i>):<br><input name="nom" type="text" size="20"><br>
+                Saisissez le commentaire que vous voulez ajouter:<BR>
+                <textarea name="commentaire" cols="60" rows="4" wrap="soft"></textarea>
+                <input name="annuler" type="button" value="Annuler" onclick="Annuler()"><br>
+                <input name="envoyermodifier" type="button" value="Envoyer" onclick="Envoyer_modifier()">&nbsp;&nbsp;
+                <input name="terminer" type="button" value="Terminer" onclick="Terminer()" style="display: None">
+            </fieldset>
+        </form>
+        <div id="liste_des_messages">&nbsp;</div>
+    </div>
+
+    <script language="JavaScript" type="text/javascript" src="exemple/commentaires.js"></script>
+    {% endcomment %}
+
+
+
 {% comment %}<br />
 	<h1><b><hr style="color:#210B61; background-color:#210B61; height:5px;" /> Data Analyzer <hr style="color:#210B61; background-color:#210B61; height:5px;"/></b></h1>
 
@@ -201,6 +269,6 @@
 			  return d;
 			}{% endcomment %}
 
-    <!--</script>-->
+    </script>
 {% endblock %}
 

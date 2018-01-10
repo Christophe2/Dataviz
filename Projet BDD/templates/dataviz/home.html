@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}DataViz{% endblock %}
+{% block navbar_home %}active{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+	<link rel="stylesheet" type="text/css" href=css/style0.css">
+{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1>Welcome to DataViz</h1><br />
+        <BR>
+{#    <p>(Put DataViz description here)</p>#}
+    {% if not user.is_authenticated %}
+      <a class="btn btn-default" href="{% url "signin" %}">Sign-in</a>
+      <a class="btn btn-success" href="{% url "signup" %}">Sign-up</a><br />
+        <BR>
+      <a class="btn btn-primary btn-lg" href="{% url "menu" %}">Start a study</a>
+    {% else %}
+      <a class="btn btn-primary" href="{% url "signout" %}">Sign-out</a><br />
+        <BR>
+      <a class="btn btn-primary btn-lg" href="{% url "menu" %}">Start a study</a>
+    {% endif %}
+  </div>
+{% endblock %}
